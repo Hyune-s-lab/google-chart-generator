@@ -1,22 +1,51 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default_layout}">
 <head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
+    <script type="text/javascript" th:inline="javascript">
         google.charts.load('current', {'packages': ['bar']});
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
+            /*<![CDATA[*/
+
+            let title = /*[[ ${request.title} ]]*/;
+            let header = /*[[ ${request.header} ]]*/;
+
+            let body1 = new Array(/*[[${request.body[0].first}]]*/,/*[[${request.body[0].second}]]*/,/*[[${request.body[0].third}]]*/);
+            let body2 = new Array(/*[[${request.body[1].first}]]*/,/*[[${request.body[1].second}]]*/,/*[[${request.body[1].third}]]*/);
+            let body3 = new Array(/*[[${request.body[2].first}]]*/,/*[[${request.body[2].second}]]*/,/*[[${request.body[2].third}]]*/);
+            let body4 = new Array(/*[[${request.body[3].first}]]*/,/*[[${request.body[3].second}]]*/,/*[[${request.body[3].third}]]*/);
+            let body5 = new Array(/*[[${request.body[4].first}]]*/,/*[[${request.body[4].second}]]*/,/*[[${request.body[4].third}]]*/);
+            let body6 = new Array(/*[[${request.body[5].first}]]*/,/*[[${request.body[5].second}]]*/,/*[[${request.body[5].third}]]*/);
+            let body7 = new Array(/*[[${request.body[6].first}]]*/,/*[[${request.body[6].second}]]*/,/*[[${request.body[6].third}]]*/);
+            let body8 = new Array(/*[[${request.body[7].first}]]*/,/*[[${request.body[7].second}]]*/,/*[[${request.body[7].third}]]*/);
+            let body9 = new Array(/*[[${request.body[8].first}]]*/,/*[[${request.body[8].second}]]*/,/*[[${request.body[8].third}]]*/);
+            let body10 = new Array(/*[[${request.body[9].first}]]*/,/*[[${request.body[9].second}]]*/,/*[[${request.body[9].third}]]*/);
+            let body11 = new Array(/*[[${request.body[10].first}]]*/,/*[[${request.body[10].second}]]*/,/*[[${request.body[10].third}]]*/);
+
+            /*]]*/
+
             var data = google.visualization.arrayToDataTable([
-                ['Year', 'Sales', 'Expenses', 'Profit'],
-                ['2014', 1000, 400, 200],
-                ['2015', 1170, 460, 250],
-                ['2016', 660, 1120, 300],
-                ['2017', 1030, 540, 350]
+                header,
+                body1,
+                body2,
+                body3,
+                body4,
+                body5,
+                body6,
+                body7,
+                body8,
+                body9,
+                body10,
+                body11,
             ]);
 
             var options = {
                 chart: {
-                    title: 'Company Performance',
+                    title: title,
                 },
                 bars: 'horizontal',
                 isStacked: true,
