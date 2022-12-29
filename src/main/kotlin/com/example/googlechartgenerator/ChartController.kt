@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping
 @Controller
 class ChartController {
 
-    @GetMapping("/chart")
+    @GetMapping("/charts/barchart_material")
     fun chart(): String {
-        return "chart"
+        return "barchart_material"
     }
 }
