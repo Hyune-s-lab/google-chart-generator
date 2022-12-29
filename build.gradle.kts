@@ -15,6 +15,8 @@ repositories {
     mavenCentral()
 }
 
+val openapi3Version = "1.6.13"
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
@@ -22,6 +24,11 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    // openapi3
+    implementation("org.springdoc:springdoc-openapi-ui:$openapi3Version")
+    implementation("org.springdoc:springdoc-openapi-webflux-ui:$openapi3Version")
+    implementation("org.springdoc:springdoc-openapi-kotlin:$openapi3Version")
 }
 
 tasks.withType<KotlinCompile> {
