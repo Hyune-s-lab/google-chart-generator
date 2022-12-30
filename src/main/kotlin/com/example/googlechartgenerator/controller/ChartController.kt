@@ -5,14 +5,14 @@ import com.example.googlechartgenerator.controller.request.Body
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.servlet.ModelAndView
 
 @Controller
 class ChartController {
     @GetMapping("/charts/barchart_material")
     fun chart(
-        @RequestBody requestString: String,
+        @RequestParam requestString: String,
         model: Model
     ): ModelAndView {
         val request = requestString.convert()
@@ -26,7 +26,7 @@ class ChartController {
 }
 
 private fun String.convert(): BarchartMaterialRequest =
-    split("\n").let {
+    split("\r\n").let {
         val drop = it.drop(2)
             .map { it2 ->
                 val split = it2.split(",")
