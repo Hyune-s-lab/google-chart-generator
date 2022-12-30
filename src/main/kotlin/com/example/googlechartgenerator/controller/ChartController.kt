@@ -3,7 +3,6 @@ package com.example.googlechartgenerator.controller
 import com.example.googlechartgenerator.controller.request.BarchartMaterialRequest
 import com.example.googlechartgenerator.controller.request.Body
 import org.springframework.stereotype.Controller
-import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.servlet.ModelAndView
@@ -12,8 +11,7 @@ import org.springframework.web.servlet.ModelAndView
 class ChartController {
     @GetMapping("/charts/barchart_material")
     fun chart(
-        @RequestParam requestString: String,
-        model: Model
+        @RequestParam requestString: String
     ): ModelAndView {
         val request = requestString.convert()
 
