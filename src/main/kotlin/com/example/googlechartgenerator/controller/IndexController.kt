@@ -1,4 +1,4 @@
-package com.example.googlechartgenerator
+package com.example.googlechartgenerator.controller
 
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model

@@ -1,5 +1,7 @@
-package com.example.googlechartgenerator
+package com.example.googlechartgenerator.controller
 
+import com.example.googlechartgenerator.controller.request.BarchartMaterialRequest
+import com.example.googlechartgenerator.controller.request.Body
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping

@@ -1,4 +1,4 @@
-package com.example.googlechartgenerator
+package com.example.googlechartgenerator.controller.request
 
 data class BarchartMaterialRequest(
     val title: String,
