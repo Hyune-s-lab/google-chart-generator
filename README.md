@@ -7,6 +7,13 @@
 - spring boot 2.7.7, kotlin
 - thymeleaf, google chart API
 
+### boot script
+
+```shell
+> nohup ./gradlew bootRun > app.log 2>&1 &
+> tail -f app.log
+```
+
 ---
 
 > http://localhost:8080/index
